@@ -1,0 +1,25 @@
+==========================================
+INICIANDO AUDITORIA DE SEGURANÇA DA API
+Data/Hora: Fri Aug  7 10:53:07 PM UTC 2026
+==========================================
+
+--- [TESTES DE ACESSO NÃO AUTORIZADO] ---
+[Tentativa 1/3] GET /api/v1/motoristas (Sem X-API-KEY / Chave Inválida)
+Status HTTP: 401
+Resposta: {"erro":"Acesso nao autorizado. Header 'X-API-KEY' invalido ou ausente."}
+------------------------------------------
+[Tentativa 2/3] GET /api/v1/motoristas (Sem X-API-KEY / Chave Inválida)
+Status HTTP: 401
+Resposta: {"erro":"Acesso nao autorizado. Header 'X-API-KEY' invalido ou ausente."}
+------------------------------------------
+[Tentativa 3/3] GET /api/v1/motoristas (Sem X-API-KEY / Chave Inválida)
+Status HTTP: 401
+Resposta: {"erro":"Acesso nao autorizado. Header 'X-API-KEY' invalido ou ausente."}
+------------------------------------------
+
+--- [TESTE DE ACESSO AUTORIZADO] ---
+[Tentativa 4/4] GET /api/v1/motoristas (Com X-API-KEY válida)
+Status HTTP: 200
+Resposta: [{"id":1,"nome":"Carlos Silva","cnh":"12345678900","categoria":"E","ativo":true},{"id":2,"nome":"Ana Pereira","cnh":"98765432100","categoria":"D","ativo":true},{"id":3,"nome":"Carlos Silva","cnh":"12345678901","categoria":"E","ativo":true}]
+==========================================
+AUDITORIA FINALIZADA

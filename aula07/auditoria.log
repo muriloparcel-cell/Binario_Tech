@@ -1,0 +1,61 @@
+==================================================
+   INICIANDO AUDITORIA DE TELEMETRIA - Sat Aug 15 01:12:21 AM UTC 2026
+==================================================
+
+>>> [1/2] AUDITANDO MÓDULO SCANIA <<<
+
+--------------------------------------------------
+TESTE: Listar Telemetria Scania
+ROTA: GET http://localhost:3000/api/v1/telemetria/scania
+STATUS HTTP: 200
+RESPOSTA: {"montadora":"Scania","dados":[{"id":1,"modelo":"R450","vin":"9BS123456789","temperatura_motor":88,"status":"OK"},{"id":2,"modelo":"S500","vin":"9BS987654321","temperatura_motor":102,"status":"ALERTA_AQUECIMENTO"}]}
+
+--------------------------------------------------
+TESTE: Registrar Telemetria Scania (Sucesso)
+ROTA: POST http://localhost:3000/api/v1/telemetria/scania
+STATUS HTTP: 201
+RESPOSTA: {"id":3,"modelo":"R500","vin":"9BS123456789","temperatura_motor":92,"status":"OK"}
+
+--------------------------------------------------
+TESTE: Registrar Telemetria Scania (Erro de VIN)
+ROTA: POST http://localhost:3000/api/v1/telemetria/scania
+STATUS HTTP: 400
+RESPOSTA: {"erro":"Validação falhou","mensagem":"O VIN/Chassi deve possuir exatamente 12 caracteres. Recebido: 9 caracteres."}
+
+>>> [2/2] AUDITANDO MÓDULO MERCEDES-BENZ <<<
+
+--------------------------------------------------
+TESTE: Listar Frota Mercedes-Benz
+ROTA: GET http://localhost:3000/api/v1/telemetria/mercedes/caminhoes
+STATUS HTTP: 200
+RESPOSTA: [{"id":1,"modelo":"Actros","versao":"2653 6x4","ano":2024,"capacidadeCargaTons":26,"status":"Disponível"},{"id":2,"modelo":"Atego","versao":"1719 4x2","ano":2023,"capacidadeCargaTons":17,"status":"Em manutenção"}]
+
+--------------------------------------------------
+TESTE: Buscar Caminhão Mercedes por ID
+ROTA: GET http://localhost:3000/api/v1/telemetria/mercedes/caminhoes/1
+STATUS HTTP: 200
+RESPOSTA: {"id":1,"modelo":"Actros","versao":"2653 6x4","ano":2024,"capacidadeCargaTons":26,"status":"Disponível"}
+
+--------------------------------------------------
+TESTE: Cadastrar Caminhão Mercedes (Sucesso)
+ROTA: POST http://localhost:3000/api/v1/telemetria/mercedes/caminhoes
+STATUS HTTP: 201
+RESPOSTA: {"id":3,"modelo":"Actros","versao":"2651 6x4","ano":2024,"capacidadeCargaTons":26,"status":"Disponível"}
+
+--------------------------------------------------
+TESTE: Cadastrar Caminhão Mercedes (Erro Modelo Inválido)
+ROTA: POST http://localhost:3000/api/v1/telemetria/mercedes/caminhoes
+STATUS HTTP: 400
+RESPOSTA: {"mensagem":"Modelo inválido. Informe 'Actros' ou 'Atego'."}
+
+>>> [3/3] AUDITANDO ROTA 404 <<<
+
+--------------------------------------------------
+TESTE: Testar Rota Não Mapeada
+ROTA: GET http://localhost:3000/api/v1/telemetria/volvo/caminhoes
+STATUS HTTP: 404
+RESPOSTA: {"erro":"Modulo ou Rota de Telemetria não encontrada."}
+
+==================================================
+   AUDITORIA CONCLUÍDA - LOG SALVO EM: auditoria.log
+==================================================
