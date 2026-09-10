@@ -7,5 +7,6 @@ router.get('/', manutencaoController.listarComFiltros);
 router.patch('/:id/status', manutencaoController.atualizarStatus);
 router.delete('/:id', manutencaoController.excluir);
 router.get('/manutencoes/buscar', manutencaoController.buscarPorPlaca);
+router.post('/api/v1/manutencoes/:id/pecas', manutencaoController.adicionarPeca);
 
 module.exports = router;

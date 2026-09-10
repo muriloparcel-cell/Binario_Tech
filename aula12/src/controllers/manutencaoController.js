@@ -88,6 +88,28 @@ const manutencaoController = {
                         res.status(500).json({ erro: "Erro ao buscar manutenções por placa.", detalhe: erro.message });
                 }
         },
+
+	// Adicionar Peca
+	adicionarPeca: async (req, res) => {
+                try {
+                        const { id } = req.params;
+                        const novaPeca = req.body;
+
+                        const manutencaoAtualizada = await Manutencao.findByIdAndUpdate(
+                                id,
+                                { $push: { pecasSubstituidas: novaPeca } },
+                                { new: true, runValidators: true }
+                        );
+
+                        if (!manutencaoAtualizada) {
+                                return res.status(404).json({ erro: "Registro de manutenção não encontrado." });
+                        }
+
+                        res.status(200).json(manutencaoAtualizada);
+                } catch (erro) {
+                        res.status(400).json({ erro: "Erro ao adicionar peça.", detalhe: erro.message });
+                }
+        },
 };
 
 module.exports = manutencaoController;
