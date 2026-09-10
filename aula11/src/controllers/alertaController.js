@@ -33,7 +33,7 @@ const alertaController = {
 	},
 
 	// Buscar por nivel de severidade
-	buscarPorSeveridade: async (req, res => {
+	buscarPorSeveridade: async (req, res) => {
 		try {
 			const { nivel } = req.params;
 

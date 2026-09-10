@@ -4,7 +4,7 @@ echo " AUDITORIA DE CRUD E SUBDOCUMENTOS NOSQL - AULA12"
 echo "=================================================="
 
 echo -e "\n[1] Registrando Manutenção com Subdocumentos de Peças..."
-RESP=$(curl -s -X POST http://localhost:3000/api/v1/manutencoes \
+RESP=$(curl -s -X POST http://localhost:3028/api/v1/manutencoes \
 	-H "Content-Type: application/json" \
 	-d '{
 	"veiculoPlaca": "SCA-2026",
@@ -18,9 +18,9 @@ echo $RESP | jq .
 ID=$(echo $RESP | jq -r '._id')
 
 echo -e "\n[2] Consultando manutenções com Custo Maior ou Igual a R$ 1000 ($gte)..."
-curl -s "http://localhost:3000/api/v1/manutencoes?minCusto=1000" | jq .
+curl -s "http://localhost:3028/api/v1/manutencoes?minCusto=1000" | jq .
 
 echo -e "\n[3] Atualizando Status da Manutenção (ID: $ID) para CONCLUIDA..."
-curl -s -X PATCH "http://localhost:3000/api/v1/manutencoes/$ID/status" \
+curl -s -X PATCH "http://localhost:3028/api/v1/manutencoes/$ID/status" \
 	-H "Content-Type: application/json" \
 	-d '{"status": "CONCLUIDA"}' | jq .
