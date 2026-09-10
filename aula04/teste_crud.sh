@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOG_FILE="crud_result.log"
-API_URL="http://localhost:3000/api/v1/veiculos"
+API_URL="http://localhost:3028/api/v1/veiculos"
 
 > "$LOG_FILE"
 

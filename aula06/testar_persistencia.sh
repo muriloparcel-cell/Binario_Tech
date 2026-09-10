@@ -4,12 +4,12 @@ echo "  AUDITORIA DE PERSISTENCIA EM DISCO - BINARIO TECH"
 echo "====================================================="
 
 echo -e "\n[1] Cadastrando Ocorrencia Scania..."
-curl -s -X POST http://localhost:3000/api/v1/ocorrencias \
+curl -s -X POST http://localhost:3028/api/v1/ocorrencias \
 	-H "Content-Type: application/json" \
 	-d '{"montadora":"Scania","placa":"SCA-9988","descricao":"Superaqucimento de motor","gravidade":"ALTA"}' | jq .
 
 echo -e "\n[2] Cadastrando Ocorrencia Mercedes-Benz..."
-curl -s -X POST http://localhost:3000/api/v1/ocorrencias \
+curl -s -X POST http://localhost:3028/api/v1/ocorrencias \
 	-H "Content-Type: application/json" \
 	-d '{"montadora":"Mercedes-Benz","placa":"MBB-1122","descricao":"Troca de pastilhas de freio", "graviade":"BAIXA"}' | jq .
 
