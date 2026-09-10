@@ -1,0 +1,4 @@
+Comando para executar e testar o codigo:
+node servidor_check.js = Serve para ativar o servidor da Binário Tech
+
+curl -s http://localhost:3028/api/v1/status-servidor | jq . = ele testa para identificar se o servidor responde corretamente aos comandos "curl"
