@@ -77,7 +77,7 @@ const authController = {
 		id: usuario._id,
 		email: usuario.email
         },
-	      process.env.JWT_SECRET,
+	      process.env.JWT_SECRET || 'binario_tech_chave_oficial_exame_2026',
         {
           expiresIn: '30m'
         }
