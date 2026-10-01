@@ -1,27 +1,21 @@
-#!/bin/bash
+echo "=============================================="
+echo " PROVA INTERMEDIÁRIA - BINÁRIO TECH - AULA 18"
+echo "=============================================="
 
-BASE_URL="http://localhost:3028/api/v1/prova"
-EMAIL="teste@prova.com"
-SENHA="123456"
+echo -e "\n[1] Registrando novo Usuário..."
+curl -s -X POST http://localhost:3028/api/v1/prova/register \
+  -H "Content-Type: application/json" \
+  -d '{ "email": "instrutor@binariotech.com.br", "senha": "SenhaSegura123" }' | jq .
 
-echo "=== CADASTRO ==="
+echo -e "\n[2] Realizando Login e obtendo JWT..."
+LOGIN_RESP=$(curl -s -X POST http://localhost:3028/api/v1/prova/login \
+  -H "Content-Type: application/json" \
+  -d '{ "email": "instrutor@binariotech.com.br", "senha": "SenhaSegura123" }')
 
-curl -s -X POST "$BASE_URL/register" \
-	-H "Content-Type: application/json" \
-	-d "{\"email\":\"$EMAIL\",\"senha\":\"$SENHA\"}" | jq
+echo $LOGIN_RESP | jq .
 
-echo "=== LOGIN ==="
+TOKEN=$(echo "$LOGIN_RESP" | jq -r '.token')
 
-RESPOSTA=$(curl -s -X POST "$BASE_URL/login" \
--H "Content-Type: application/json" \
--d "{\"email\":\"$EMAIL\",\"senha\":\"$SENHA\"}")
-
-echo "$RESPOSTA" | jq
-
-TOKEN=$(echo "$RESPOSTA" | jq -r '.token')
-
-echo ""
-echo "=== RELATÓRIO PROTEGIDO ==="
-
-curl -s -X GET "$BASE_URL/relatorio" \
--H "Authorization: Bearer $TOKEN" | jq
+echo -e "\n[3] Acessando Rota Protegida COM Token JWT Válido (Esperado HTTP 200)..."
+curl -s http://localhost:3028/api/v1/prova/relatorio \
+  -H "Authorization: Bearer $TOKEN" | jq .

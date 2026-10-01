@@ -4,13 +4,13 @@ echo "     INICIANDO OS TESTES DO SERVIDOR "
 echo "========================================="
 
 echo -e "\n[1] Testando rota: /status"
-http GET http://localhost:3028/status
+curl -s http://localhost:3028/status | jq .
 
 echo -e "\n[1] Testando rota: /scania"
-http GET http://localhost:3028/scania/info
+curl -s http://localhost:3028/scania/info | jq .
 
 echo -e "\n[3] Testando rota: /vw"
-http GET http://localhost:3028/vw/info
+curl -s http://localhost:3028/vw/info | jq .
 
 echo -e "\n-----------------------------------------"
 echo "Auditoria finalizada com sucesso!"
