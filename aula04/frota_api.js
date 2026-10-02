@@ -61,13 +61,11 @@ app.patch('/api/v1/veiculos/:id/status', (req, res) => {
 		return res.status(404).json({ erro: "Veiculo nao encontrado." });
 	}
 	if (!status) {
-		return res.status(400).json({ erro: "O campo 'status' e obrigatorio."
-});
+		return res.status(400).json({ erro: "O campo 'status' e obrigatorio." });
 	}
 
 	veiculo.status = status.toUpperCase();
-	res.status(200).json({ mensagem: "Status atualizado com sucesso!", veiculo
-});
+	res.status(200).json({ mensagem: "Status atualizado com sucesso!", veiculo });
 });
 
 // 5. DELETE /api/v1/veiculos/:id - Remover veiculo da frota

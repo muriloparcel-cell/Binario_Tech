@@ -1,26 +1,25 @@
 ==========================================
  INICIANDO TESTE BASH DA API DE VEÍCULOS 
- Data: Fri Aug  7 12:59:36 AM UTC 2026
 ==========================================
 
->>> [1/4] Cadastrando Veículo 1 (Volvo FH 540)...
+[1/4] Cadastrando Veículo 1 (Volvo FH 540)...
 Resposta:
-{"id":23,"placa":"ABC1D23","montadora":"Volvo","modelo":"FH 540","status":"DISPONIVEL"}
+{"id":4,"placa":"ABC1D23","montadora":"Volvo","modelo":"FH 540","status":"DISPONIVEL"}
 HTTP_CODE:201
 
->>> [2/4] Cadastrando Veículo 2 (Scania R450)...
+[2/4] Cadastrando Veículo 2 (Scania R450)...
 Resposta:
-{"id":24,"placa":"XYZ9K88","montadora":"Scania","modelo":"R450","status":"DISPONIVEL"}
+{"id":5,"placa":"XYZ9K88","montadora":"Scania","modelo":"R450","status":"DISPONIVEL"}
 HTTP_CODE:201
 
->>> [3/4] Atualizando (PATCH) status do Veículo ID 23 para EM_ROTA...
+[3/4] Atualizando (PATCH) status do Veículo ID 4 para EM_ROTA...
 Resposta:
-{"mensagem":"Status atualizado com sucesso!","veiculo":{"id":23,"placa":"ABC1D23","montadora":"Volvo","modelo":"FH 540","status":"EM_ROTA"}}
+{"mensagem":"Status atualizado com sucesso!","veiculo":{"id":4,"placa":"ABC1D23","montadora":"Volvo","modelo":"FH 540","status":"EM_ROTA"}}
 HTTP_CODE:200
 
->>> [4/4] Deletando Veículo ID 24...
+[4/4] Deletando Veículo ID 5...
 Resposta:
-{"mensagem":"Veiculo ID 24 removido com sucesso."}
+{"mensagem":"Veiculo ID 5 removido com sucesso."}
 HTTP_CODE:200
 
 ==========================================

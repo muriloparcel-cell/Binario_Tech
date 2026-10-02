@@ -15,8 +15,7 @@ app.use(loggerMiddleware);
 
 //  Rota Publica
 app.get('/api/v1/health', (req, res) => {
-	res.status(200).json({ status: "ONLINE", aplicacao: "Binario Tech API v2"
-});
+	res.status(200).json({ status: "ONLINE", aplicacao: "Binario Tech API v2" });
 });
 
 // Rotas Protegidas por Autenticacao
