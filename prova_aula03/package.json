@@ -1,0 +1,16 @@
+{
+	"name": "prova_aula03",
+	"version": "1.0.0",
+	"description": "",
+	"main": "telemetria.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node telemetria.js"
+	},
+	"keywords": [],
+	"type": "commonjs",
+	"dependencies": {
+		"express": "^5.2.1",
+		"httpie": "^1.1.2"
+	}
+}
