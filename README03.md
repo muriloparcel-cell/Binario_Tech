@@ -1,9 +1,9 @@
-========================================================================================================================================
+============================================================================================
 # Servidor de Telemetria - Binário Tech (Aula 03)
 
 Projeto desenvolvido durante a aula prática da **Binário Tech** no ambiente Google Cloud Shell. O sistema simula um servidor API Express em Node.js para consulta de dados de telemetria de veículos pesados (Scania, Mercedes-Benz, Volkswagen e Volvo) e inclui scripts em Bash para automação de testes e auditorias.
 
-========================================================================================================================================
+============================================================================================
 
 # Tecnologias e Ferramentas Utilizadas
 
@@ -13,7 +13,7 @@ Projeto desenvolvido durante a aula prática da **Binário Tech** no ambiente Go
 * **jq** — Processador de JSON via linha de comando para filtragem de dados.
 * **Bash Shell Scripting** — Automação de testes e auditoria de rotas.
 
-========================================================================================================================================
+============================================================================================
 
 #  Estrutura do Projeto
 
@@ -28,7 +28,7 @@ aula03/
 └── relatorio.log         # Arquivo de log da execução da auditoria (Exercício 06)
 ```
 
-========================================================================================================================================
+============================================================================================
 
 #  Como Configurar e Executar
 
@@ -58,7 +58,7 @@ Você pode iniciar o servidor de duas formas:
 
 O servidor estará rodando na porta 3028: `http://localhost:3028`.
 
-========================================================================================================================================
+============================================================================================
 
 # Endpoints da API
 
@@ -69,7 +69,7 @@ O servidor estará rodando na porta 3028: `http://localhost:3028`.
 | `GET` | `/api/v1/vw` | Retorna status de telemetria da Volkswagen | `{"montadora":"Volkswagen","modelo":"Delivery","status":"ALERTA","conexao":false,"velocidade_media":0}` |
 | `GET` | `/api/v1/volvo` | Retorna status de telemetria da Volvo | `{"montadora":"Volvo","modelo":"FH 540","status":"OK","conexao":true,"velocidade_media":85}` |
 
-========================================================================================================================================
+============================================================================================
 
 # Script de Automação de Testes
 
@@ -80,7 +80,7 @@ chmod +x testar_telemetria.sh
 ./testar_telemetria.sh
 ```
 
-========================================================================================================================================
+============================================================================================
 
 # Resoluções da Bateria de Exercícios
 
@@ -134,3 +134,4 @@ Abaixo estão os comandos executados para responder aos exercícios práticos da
   ps aux | grep node
   kill -9 <PID>
   ```
+============================================================================================
