@@ -1,0 +1,25 @@
+===================================================
+
+          Iniciando o teste das rotas 
+
+===================================================
+
+[Scania] Testando a rota scania...
+{
+  "montadora": "Scania",
+  "modelo": "R450",
+  "status": "OK",
+  "conexao": true,
+  "velocidade_media": 82
+}
+
+[Scania] Rota Confirmada!
+
+[Mercedes] Testando a rota mercedes-benz...
+{
+  "montadora": "Mercedes-Benz",
+  "modelo": "Actros",
+  "status": "OK",
+  "conexao": true,
+  "velocidade_media": 78
+}
