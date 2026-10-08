@@ -7,11 +7,11 @@ Projeto desenvolvido durante a aula prática da **Binário Tech** no ambiente Go
 
 # Tecnologias e Ferramentas Utilizadas
 
- **Node.js** & **Express** — Criação do servidor HTTP e rotas de API REST JSON.
- **cURL** — Cliente CLI para realizar requisições HTTP.
- **HTTPie** — Cliente HTTP alternativo com sintaxe simplificada e formatada.
- **jq** — Processador de JSON via linha de comando para filtragem de dados.
- **Bash Shell Scripting** — Automação de testes e auditoria de rotas.
+* **Node.js** & **Express** — Criação do servidor HTTP e rotas de API REST JSON.
+* **cURL** — Cliente CLI para realizar requisições HTTP.
+* **HTTPie** — Cliente HTTP alternativo com sintaxe simplificada e formatada.
+* **jq** — Processador de JSON via linha de comando para filtragem de dados.
+* **Bash Shell Scripting** — Automação de testes e auditoria de rotas.
 
 ============================================================================================
 
@@ -84,24 +84,24 @@ chmod +x testar_telemetria.sh
 
 Abaixo estão os comandos executados para responder aos exercícios práticos da aula:
 
- Exercício 01: Obter apenas a chave `modelo` da Scania via cURL + jq
+* Exercício 01: Obter apenas a chave `modelo` da Scania via cURL + jq
 
   curl -s http://localhost:3028/api/v1/scania | jq '.modelo'
 
 
- Exercício 02: Salvar requisição da Mercedes usando HTTPie
+* Exercício 02: Salvar requisição da Mercedes usando HTTPie
 
   http http://localhost:3028/api/v1/mercedes > mercedes.json
   ou
   curl -s http://localhost:3028/api/v1/mercedes > mercedes.json
 
 
- Exercício 03: Filtrar campo `status` do arquivo `mercedes.json`
+* Exercício 03: Filtrar campo `status` do arquivo `mercedes.json`
 
   cat mercedes.json | jq '.status'
 
 
- Exercício 04: Adicionar rota `/api/v1/volvo` no `telemetria.js`
+* Exercício 04: Adicionar rota `/api/v1/volvo` no `telemetria.js`
   Adicionada a rota no servidor:
 
   app.get('/api/v1/volvo', (req, res) => {
@@ -109,7 +109,7 @@ Abaixo estão os comandos executados para responder aos exercícios práticos da
   });
 
 
- Exercício 05: Configurar o script `"start"` no `package.json`
+* Exercício 05: Configurar o script `"start"` no `package.json`
   No arquivo `package.json`, adicione na propriedade `"scripts"`:
 
   "scripts": {
@@ -117,17 +117,17 @@ Abaixo estão os comandos executados para responder aos exercícios práticos da
   }
 
 
- Exercício 06: Redirecionar relatório de testes para `relatorio.log`
+* Exercício 06: Redirecionar relatório de testes para `relatorio.log`
 
   ./testar_telemetria.sh > relatorio.log
 
 
- Exercício 07: Exibir `montadora` e `status` da VW em chamada única no `jq`
+* Exercício 07: Exibir `montadora` e `status` da VW em chamada única no `jq`
 
   curl -s http://localhost:3028/api/v1/vw | jq '{montadora, status}'
 
 
- Exercício 08: Encontrar e encerrar o processo Node.js
+* Exercício 08: Encontrar e encerrar o processo Node.js
 
   ps aux | grep node
   kill -9 <PID>
