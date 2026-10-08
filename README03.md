@@ -7,11 +7,11 @@ Projeto desenvolvido durante a aula prática da **Binário Tech** no ambiente Go
 
 # Tecnologias e Ferramentas Utilizadas
 
-* **Node.js** & **Express** — Criação do servidor HTTP e rotas de API REST JSON.
-* **cURL** — Cliente CLI para realizar requisições HTTP.
-* **HTTPie** — Cliente HTTP alternativo com sintaxe simplificada e formatada.
-* **jq** — Processador de JSON via linha de comando para filtragem de dados.
-* **Bash Shell Scripting** — Automação de testes e auditoria de rotas.
+* Node.js & Express — Criação do servidor HTTP e rotas de API REST JSON.
+* cURL — Cliente CLI para realizar requisições HTTP.
+* HTTPie — Cliente HTTP alternativo com sintaxe simplificada e formatada.
+* jq — Processador de JSON via linha de comando para filtragem de dados.
+* Bash Shell Scripting — Automação de testes e auditoria de rotas.
 
 ============================================================================================
 
@@ -19,13 +19,13 @@ Projeto desenvolvido durante a aula prática da **Binário Tech** no ambiente Go
 
 
 aula03/
-* package.json          # Configuração de dependências e scripts do Node.js
-* package-lock.json     # Mapeamento exato de versões das dependências
-* telemetria.js         # Aplicação principal (Servidor Express)
-* testar_telemetria.sh  # Script Bash de automação de testes de rotas
-* mercedes.json         # Log/resposta gerado via HTTPie (Exercício 02)
-* scania.json           # Log/resposta do endpoint Scania
-* relatorio.log         # Arquivo de log da execução da auditoria (Exercício 06)
+* package.json          = Configuração de dependências e scripts do Node.js
+* package-lock.json     = Mapeamento exato de versões das dependências
+* telemetria.js         = Aplicação principal (Servidor Express)
+* testar_telemetria.sh  = Script Bash de automação de testes de rotas
+* mercedes.json         = Log/resposta gerado via HTTPie (Exercício 02)
+* scania.json           = Log/resposta do endpoint Scania
+* relatorio.log         = Arquivo de log da execução da auditoria (Exercício 06)
 
 
 ============================================================================================
