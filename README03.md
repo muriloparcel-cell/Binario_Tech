@@ -19,13 +19,13 @@ Projeto desenvolvido durante a aula prática da **Binário Tech** no ambiente Go
 
 
 aula03/
-├── package.json          # Configuração de dependências e scripts do Node.js
-├── package-lock.json     # Mapeamento exato de versões das dependências
-├── telemetria.js         # Aplicação principal (Servidor Express)
-├── testar_telemetria.sh  # Script Bash de automação de testes de rotas
-├── mercedes.json         # Log/resposta gerado via HTTPie (Exercício 02)
-├── scania.json           # Log/resposta do endpoint Scania
-└── relatorio.log         # Arquivo de log da execução da auditoria (Exercício 06)
+* package.json          # Configuração de dependências e scripts do Node.js
+* package-lock.json     # Mapeamento exato de versões das dependências
+* telemetria.js         # Aplicação principal (Servidor Express)
+* testar_telemetria.sh  # Script Bash de automação de testes de rotas
+* mercedes.json         # Log/resposta gerado via HTTPie (Exercício 02)
+* scania.json           # Log/resposta do endpoint Scania
+* relatorio.log         # Arquivo de log da execução da auditoria (Exercício 06)
 
 
 ============================================================================================
@@ -34,7 +34,7 @@ aula03/
 
 ## 1. Pré-requisitos e Instalação
 
-Acesse o diretório do projeto e instale as dependências do Node.js e as ferramentas de terminal:
+* Acesse o diretório do projeto e instale as dependências do Node.js e as ferramentas de terminal:
 
 
 cd ~/binario_tech/aula03
@@ -44,7 +44,7 @@ sudo apt-get update && sudo apt-get install -y jq httpie
 
 ## 2. Executando o Servidor
 
-Você pode iniciar o servidor de duas formas:
+* Você pode iniciar o servidor de duas formas:
 
  Modo padrão (via NPM script):
 
@@ -62,11 +62,11 @@ O servidor estará rodando na porta 3028: `http://localhost:3028`.
 
 # Endpoints da API
 
-| Método|        Rota        |                 Descrição                     |                                    Exemplo de Resposta                                               |
-| `GET` | `/api/v1/scania` | Retorna status de telemetria da Scania | `{"montadora":"Scania","modelo":"R450","status":"OK","conexao":true,"velocidade_media":82}` |
-| `GET` | `/api/v1/mercedes` | Retorna status de telemetria da Mercedes-Benz | `{"montadora":"Mercedes-Benz","modelo":"Actros","status":"OK","conexao":true,"velocidade_media":78}` |
-| `GET` | `/api/v1/vw` | Retorna status de telemetria da Volkswagen | `{"montadora":"Volkswagen","modelo":"Delivery","status":"ALERTA","conexao":false,"velocidade_media":0}` |
-| `GET` | `/api/v1/volvo` | Retorna status de telemetria da Volvo | `{"montadora":"Volvo","modelo":"FH 540","status":"OK","conexao":true,"velocidade_media":85}` |
+* | Método|        Rota        |                 Descrição                     |                                    Exemplo de Resposta                                               |
+* | `GET` | `/api/v1/scania` | Retorna status de telemetria da Scania | `{"montadora":"Scania","modelo":"R450","status":"OK","conexao":true,"velocidade_media":82}` |
+* | `GET` | `/api/v1/mercedes` | Retorna status de telemetria da Mercedes-Benz | `{"montadora":"Mercedes-Benz","modelo":"Actros","status":"OK","conexao":true,"velocidade_media":78}` |
+* | `GET` | `/api/v1/vw` | Retorna status de telemetria da Volkswagen | `{"montadora":"Volkswagen","modelo":"Delivery","status":"ALERTA","conexao":false,"velocidade_media":0}` |
+* | `GET` | `/api/v1/volvo` | Retorna status de telemetria da Volvo | `{"montadora":"Volvo","modelo":"FH 540","status":"OK","conexao":true,"velocidade_media":85}` |
 
 ============================================================================================
 
