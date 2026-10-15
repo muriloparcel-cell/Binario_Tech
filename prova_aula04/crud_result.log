@@ -1,0 +1,114 @@
+==================================================
+
+    INICIANDO OS TESTES DA FROTA_API.JS
+    Data e hora: qui 15 out 2026 14:43:05 -03
+==================================================
+Iniciando o cadastro de dois veiculos
+{
+  "id": null,
+  "placa": "VWX-5555",
+  "montadora": "Volkswagen",
+  "modelo": "Delivery",
+  "status": "DISPONIVEL"
+}
+Primeiro veiculo registrado com sucesso
+
+
+
+Registrando o segundo veiculo
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 90
+ETag: W/"5a-dPZpxcSUKSGJHni990Gm0IfBarc"
+Date: Thu, 15 Oct 2026 17:43:06 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"id":null,"placa":"KLL-9090","montadora":"Volvo","modelo":"FH 540","status":"DISPONIVEL"}Segundo veiculo registrado com sucesso!
+
+
+
+Iniciando o teste da requisição GET
+[
+  {
+    "id": 1,
+    "placa": "ABC-1234",
+    "montadora": "Scania",
+    "modelo": "R450",
+    "status": "DISPONIVEL"
+  },
+  {
+    "id": null,
+    "placa": "VWX-5555",
+    "montadora": "Volkswagen",
+    "modelo": "Delivery",
+    "status": "DISPONIVEL"
+  },
+  {
+    "id": null,
+    "placa": "KLL-9090",
+    "montadora": "Volvo",
+    "modelo": "FH 540",
+    "status": "DISPONIVEL"
+  },
+  {
+    "id": null,
+    "placa": "VWX-5555",
+    "montadora": "Volkswagen",
+    "modelo": "Delivery",
+    "status": "DISPONIVEL"
+  },
+  {
+    "id": null,
+    "placa": "KLL-9090",
+    "montadora": "Volvo",
+    "modelo": "FH 540",
+    "status": "DISPONIVEL"
+  },
+  {
+    "id": null,
+    "placa": "VWX-5555",
+    "montadora": "Volkswagen",
+    "modelo": "Delivery",
+    "status": "DISPONIVEL"
+  },
+  {
+    "id": null,
+    "placa": "KLL-9090",
+    "montadora": "Volvo",
+    "modelo": "FH 540",
+    "status": "DISPONIVEL"
+  }
+]
+
+
+
+Teste concluido. Iniciando teste de atualização PATCH
+jq: parse error: Invalid numeric literal at line 1, column 10
+Teste PATCH concluido com sucesso!
+
+
+
+Iniciando teste PUT
+{
+  "mensagem": "Veiculo substituido com sucesso!",
+  "veiculo": {
+    "id": 2,
+    "placa": "LGT-4012",
+    "montadora": "Volkswagen",
+    "modelo": "Delivery",
+    "status": "MANUTENCAO"
+  }
+}
+Teste PUT finalizado com sucesso
+
+
+
+Iniciando teste final: DELETE
+jq: parse error: Invalid numeric literal at line 1, column 10
+Teste DELETE finalizado
+
+
+
+Todos testes foram concluidos com sucesso
