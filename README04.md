@@ -4,14 +4,14 @@ Este repositório contém a implementação prática da **Aula 04**, construindo
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 - **Node.js**
 - **Express.js** (Framework web)
 - **cURL / jq** (Ferramentas de linha de comando para requisições HTTP e formatação JSON)
 
 ---
 
-## 🚀 Guia Passo a Passo
+##  Guia Passo a Passo
 
 ### [PASSO 1] Preparação do Ambiente
 Execute os comandos abaixo no seu terminal para criar a estrutura da pasta e instalar as dependências:
@@ -145,7 +145,7 @@ app.listen(PORT, () => {
 
 ---
 
-## 🎯 Bateria de Exercícios de Fixação
+##  Bateria de Exercícios de Fixação
 
 * **Exercício 01:** Efetue uma requisição GET buscando apenas o veículo de ID 1 e exiba o resultado formatado com `jq`.
   ```bash
