@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configurações do servidor e arquivo de saída
-URL_BASE="http://localhost:3000/api/v1/telemetria"
+URL_BASE="http://localhost:3028/api/v1/telemetria"
 LOG_FILE="auditoria.log"
 
 # Função para registrar e exibir mensagens no console e no arquivo de log

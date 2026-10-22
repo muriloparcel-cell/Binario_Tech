@@ -49,7 +49,23 @@ const veiculosController = {
             console.error('Erro ao buscar veículo por ID:', erro);
             return res.status(500).json({ erro: 'Erro interno ao consultar o banco de dados.' });
         }
-    }
+    },
+	atualizarStatus: async (req, res) => {
+                try {
+                        const { id } = req.params;
+                        const { status } = req.body;
+
+                        const veiculoExiste = await db('veiculos').where({ id }).first();
+                        if (!veiculoExiste) {
+                                return res.status(404).json({ mensagem: 'Veículo não encontrado' });
+                        }
+
+                        await db('veiculos').where({ id }).update({ status });
+                        return res.status(200).json({ mensagem: 'Status atualizado com sucesso' });
+                } catch (error) {
+                        return res.status(500).json({ mensagem: 'Erro ao atualizar status', erro: error.message });
+                }
+        }
 };
 
 module.exports = veiculosController;

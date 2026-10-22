@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1792090287848,
+    "montadora": "Scania",
+    "placa": "SCA-9988",
+    "descricao": "Superaqucimento de motor",
+    "gravidade": "ALTA",
+    "data_registro": "2026-10-15T18:51:27.848Z"
+  },
+  {
+    "id": 1792090287863,
+    "montadora": "Mercedes-Benz",
+    "placa": "MBB-1122",
+    "descricao": "Troca de pastilhas de freio",
+    "gravidade": "MEDIA",
+    "data_registro": "2026-10-15T18:51:27.863Z"
+  }
+]
