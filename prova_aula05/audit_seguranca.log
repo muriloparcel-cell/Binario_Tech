@@ -1,0 +1,167 @@
+==========================================
+    INICIANDO AUDITORIA DE SEGURANÇA      
+==========================================
+
+--- 1. Teste Health Check (200 OK - Público) ---
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 54
+ETag: W/"36-AkriwZCTZMujSbNWiZjGKI80UkU"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"UP","timestamp":"2026-10-22T13:15:20.008Z"}
+
+
+--- 2. Teste Sem Autenticação (401 Unauthorized) ---
+HTTP/1.1 401 Unauthorized
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 73
+ETag: W/"49-MjUKJrD5ZjEZEJyqbB4L1jVEdSw"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"Acesso não autorizado. Chave X-API-KEY ausente ou inválida."}
+
+
+--- 3. Teste Com Chave Inválida (401 Unauthorized) ---
+HTTP/1.1 401 Unauthorized
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 73
+ETag: W/"49-MjUKJrD5ZjEZEJyqbB4L1jVEdSw"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"Acesso não autorizado. Chave X-API-KEY ausente ou inválida."}
+
+
+--- 4. Teste Validação de CNH Inválida (400 Bad Request) ---
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 84
+ETag: W/"54-tYglJUdS0gCkhp542PyPO1bqwcs"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"Validação falhou: A CNH deve conter exatamente 11 dígitos numéricos."}
+
+
+--- 5. Teste Cadastro Bem-sucedido (201 Created) ---
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 112
+ETag: W/"70-sE2D1xGWdzx0KJkCGaVLKoUx6LU"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Motorista cadastrado com sucesso!","motorista":{"id":1,"nome":"Maria Oliveira","cnh":"98765432100"}}
+
+
+--- 6. Teste Consulta Autenticada (200 OK) ---
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 54
+ETag: W/"36-8zNRFjCasG+jTfaNGftTCgSshGE"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":1,"nome":"Maria Oliveira","cnh":"98765432100"}]
+
+
+--- 7. Teste Rota Inexistente (404 Not Found) ---
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 32
+ETag: W/"20-lqMP793B2qh+2ehS8/rb5p5RKXg"
+Date: Thu, 22 Oct 2026 13:15:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"Rota não encontrada"}
+
+
+==========================================
+         AUDITORIA CONCLUÍDA              
+==========================================
+==========================================
+    INICIANDO AUDITORIA DE SEGURANÇA      
+==========================================
+
+--- 1. Teste Sem Autenticação (401 Unauthorized) ---
+{"error":"Não Autorizado","message":"Chave de API inválida ou não fornecida no cabeçalho X-API-KEY."}
+
+
+--- 2. Teste Com Chave Inválida (401 Unauthorized) ---
+{
+  "error": "Não Autorizado",
+  "message": "Chave de API inválida ou não fornecida no cabeçalho X-API-KEY."
+}
+
+
+
+--- 3. Teste Validação de CNH Inválida (400 Bad Request) ---
+{
+  "error": "Requisição Inválida",
+  "message": "A CNH é obrigatória e deve conter exatamente 11 dígitos numéricos."
+}
+
+
+
+--- 4. Teste Rota Inexistente (404 Not Found) ---
+{
+  "error": "Não Encontrado",
+  "message": "A rota solicitada não existe nesta API."
+}
+
+
+
+--- 5. Teste Cadastro Bem-sucedido (201 Created) ---
+{
+  "sucesso": true,
+  "mensagem": "Motorista cadastrado com sucesso!",
+  "dados": {
+    "id": 2,
+    "nome": "Maria Oliveira",
+    "cnh": "98765432100"
+  }
+}
+
+
+
+--- 5. Teste Cadastro Bem-sucedido (201 Created) ---
+{
+  "sucesso": true,
+  "mensagem": "Manutenção agendada com sucesso!",
+  "dados": {
+    "id": 4,
+    "placa": "TYP-9510",
+    "descricao": "Troca de pneus",
+    "valor": "Pendente"
+  }
+}
+
+
+
+==========================================
+         AUDITORIA CONCLUÍDA              
+==========================================
